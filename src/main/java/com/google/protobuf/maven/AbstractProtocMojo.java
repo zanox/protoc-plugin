@@ -82,7 +82,7 @@ abstract class AbstractProtocMojo extends AbstractMojo {
 	/**
 	 * @parameter default-value=false
 	 */
-	private boolean removePreviouslyGeneratedObjects;
+	private boolean cleanOutputDirectory;
 
 	/**
 	 * @parameter
@@ -179,7 +179,7 @@ abstract class AbstractProtocMojo extends AbstractMojo {
 
 				// Quick fix to fix issues with two mvn installs in a row (ie no
 				// clean)
-				if (removePreviouslyGeneratedObjects)
+				if (cleanOutputDirectory)
 					cleanDirectory(outputDirectory);
 
 				Protoc protoc = new Protoc.Builder(this.protocExecutable, outputDirectory, langSpec.getLanguage())

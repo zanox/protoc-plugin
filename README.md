@@ -1,12 +1,15 @@
 # protoc-plugin
 maven plugin to generate java sources from protobuf
 
+It is for of [maven-protoc-plugin](https://github.com/dtrott/maven-protoc-plugin).
+
 **********************************************
 *** Maven Protocol Buffers (protoc) Plugin ***
 **********************************************
 
 A minimal configuration to invoke this plugin would be:
 
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -29,7 +32,10 @@ A minimal configuration to invoke this plugin would be:
                 <groupId>com.google.protobuf.tools</groupId>
                 <artifactId>maven-protoc-plugin</artifactId>
                 <configuration>
+                    <!-- Protobuff executable -->
                     <protocExecutable>/usr/local/bin/protoc</protocExecutable>
+                    <!-- Will drop previously output directory. By default false -->
+                    <cleanOutputDirectory>false</cleanOutputDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -42,7 +48,6 @@ A minimal configuration to invoke this plugin would be:
             </plugin>
         </plugins>
     </build>
-
     <dependencies>
         <dependency>
             <groupId>com.google.protobuf</groupId>
@@ -51,7 +56,7 @@ A minimal configuration to invoke this plugin would be:
         </dependency>
     </dependencies>
 </project>
+```
 
-Everything should then build with a: mvn clean install
-
-Besides that you can create a special profile for the source generation and use command: mvn -P<your_profile> generate-sources  
+Everything should then build with a: mvn clean install,
+besides that you can create a special profile for the source generation and use command: mvn -Pyour_profile generate-sources  
