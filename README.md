@@ -1,7 +1,7 @@
 # protoc-plugin
 maven plugin to generate java sources from protobuf
 
-It is for of [maven-protoc-plugin](https://github.com/dtrott/maven-protoc-plugin).
+It is a fork of [maven-protoc-plugin](https://github.com/dtrott/maven-protoc-plugin).
 
 **********************************************
 *** Maven Protocol Buffers (protoc) Plugin ***
