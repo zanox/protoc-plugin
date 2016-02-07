@@ -34,7 +34,7 @@ A minimal configuration to invoke this plugin would be:
                 <configuration>
                     <!-- Protobuff executable -->
                     <protocExecutable>/usr/local/bin/protoc</protocExecutable>
-                    <!-- Will drop previously output directory. By default false -->
+                    <!-- Will drop previously created output directory. By default false -->
                     <cleanOutputDirectory>false</cleanOutputDirectory>
                 </configuration>
                 <executions>
